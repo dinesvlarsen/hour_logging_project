@@ -2,24 +2,24 @@
 	<!--  -->
 	<div class="loggedhours">
 		<p>Hours:</p>
-		
+
 		<div v-if="userInput.length === 0" class="loggedhours__card">
-			<p>No hours logged yet.</p>	
+			<p>No hours logged yet.</p>
 		</div>
-		
-		<div  v-for="input, index in userInput">
+
+		<div v-for="(input, index) in userInput">
 			<div class="loggedhours__card">
 				<div class="card__top">
 					<p>{{ input.hour }}</p>
-					<button class="top__button" @click="deleteHour(index)"><img class="button__icon" src="/images/delete-icon.png">Delete</button>
+					<button class="top__button" @click="deleteHour(index)">
+						<img class="button__icon" src="/images/delete-icon.png" />Delete
+					</button>
 				</div>
 
 				<div v-if="input.comment" class="card__bottom">
-					<p> {{input.comment}} </p>
+					<p>{{ input.comment }}</p>
 				</div>
 			</div>
-		
-		
 		</div>
 
 		<div class="loggedhours__total">
@@ -34,27 +34,27 @@
 
 <script>
 export default {
-	data(){
+	data() {
 		return {
-			totalHoursNotification: "You've surpassed 100 hours"
-		}
+			totalHoursNotification: "You've surpassed 100 hours",
+		};
 	},
 	methods: {
-		deleteHour(index){
-			this.$store.commit('removeHour', index)
-			this.$store.commit('addTotalHours')
-		}
+		deleteHour(index) {
+			this.$store.commit('removeHour', index);
+			this.$store.commit('addTotalHours');
+		},
 	},
 	computed: {
-		userInput(){
-			return this.$store.state.userInput
+		userInput() {
+			return this.$store.state.userInput;
 		},
 
-		totalHours(){
-			return this.$store.state.totalHours
-		}
-	}
-}
+		totalHours() {
+			return this.$store.state.totalHours;
+		},
+	},
+};
 </script>
 
 <style>
@@ -68,12 +68,11 @@ export default {
 
 .loggedhours__card {
 	display: flex;
-	flex-direction:column;
+	flex-direction: column;
 	margin-top: 8px;
 	background-color: white;
 	padding: 6px 8px;
-	
-	border-radius: var(--border-radius)
+	border-radius: var(--border-radius);
 }
 
 .card__top {
@@ -85,7 +84,7 @@ export default {
 
 .top__button {
 	align-items: center;
-	background-color: #C91D1D;
+	background-color: #c91d1d;
 	color: white;
 	padding: 8px 16px;
 	border-radius: var(--border-radius);

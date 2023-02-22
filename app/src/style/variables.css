@@ -1,8 +1,8 @@
 :root {
-	--background: #FFF5F5;
+	--background: #fff5f5;
 	--foreground: black;
-	
-	--font-family:'Inter', sans-serif;
+
+	--font-family: 'Inter', sans-serif;
 	--font-size: 20px;
 
 	--border-radius: 5px;
