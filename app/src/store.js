@@ -1,23 +1,22 @@
 export default {
 	state() {
 		return {
-			hours: [],
+			userInput: [],
 			totalHours: 0
 		};
 	},
 	mutations: {
-		addHours(state, hour) {
-			state.hours.unshift(hour)
+		addInput(state, object) {
+			state.userInput.unshift(object)
 		},
 
-
 		addTotalHours(state) {
-			if (state.hours.length === 0) state.totalHours = 0;
-			else state.totalHours = state.hours.reduce((a, b) => a += b)
+			const arrayOfHours = state.userInput.map(object => object.hour)
+			state.totalHours = arrayOfHours.reduce((a, b) => a += b, 0)
 		},
 
 		removeHour(state, index) {
-			state.hours.splice(index, 1)
+			state.userInput.splice(index, 1)
 		}
 	}
 };
