@@ -1,0 +1,26 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+button, input, table {
+	font: inherit;
+	background: transparent;
+	border: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+img {
+	width: 100%;
+}
+
+/* Remove the number input arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

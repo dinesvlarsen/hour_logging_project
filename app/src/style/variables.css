@@ -1,0 +1,9 @@
+:root {
+	--background: #FFF5F5;
+	--foreground: black;
+	
+	--font-family:'Inter', sans-serif;
+	--font-size: 20px;
+
+	--border-radius: 5px;
+}
